@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Kamu 💗</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Blur + Glow -->
+  <div class="bg"></div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+
+
+  <!-- Floating Hearts -->
+  <div class="hearts" aria-hidden="true"></div>
+
+  <!-- Music -->
+  <audio id="bgMusic" loop>
+    <source src="assets/sound.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Top Nav -->
+  <header class="nav">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>Our Love</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn ghost" id="toggleMusic">🎵 Musik</button>
+      <button class="btn" id="openLetter">💌 Buka Surat</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <p class="badge">✨ Website Fatrian 💗 Saskiyah</p>
+        <h1>
+          Untuk <span class="script">Saskiyah</span><br/>
+          yang selalu menemaniku<br/>
+          setiap hari 💗
+        </h1>
+        <p class="subtitle">
+          Aku bikin ini bukan cuma website… ini bukti kecil kalau aku serius sama kamu.
+        </p>
+
+        <div class="cta">
+          <button class="btn big" id="scrollToGallery">📸 Lihat Kenangan</button>
+          <button class="btn big ghost" id="scrollToTime">⏳ Waktu Kita</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="num" id="loveCount">0</span>
+            <span class="label">Kali aku mikirin kamu</span>
+          </div>
+          <div class="stat">
+            <span class="num" id="heartClicks">0</span>
+            <span class="label">Tap love kamu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card">
+          <div class="card-top">
+            <div class="avatar"></div>
+            <div>
+              <h3>Fatrian ✦ & Saskiyah</h3>
+              <p>“Kita nggak harus sempurna, yang penting bareng.”</p>
+            </div>
+          </div>
+
+          <div class="card-photo">
+            <img src="assets/pict.jpg" alt="Foto Kenangan" />
+          </div>
+
+          <div class="card-actions">
+            <button class="mini" id="tapLove">💗 Tap Love</button>
+            <button class="mini ghost" id="randomQuote">✨ Random Bucin</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="section-head">
+        <h2>Galeri Kenangan 📸</h2>
+        <p>Foto boleh biasa, tapi rasa sayangku nggak pernah biasa.</p>
+      </div>
+
+      <div class="grid">
+  <div class="photo" data-img="assets/foto1.jpg"><img src="assets/foto1.jpg" alt=""></div>
+  <div class="photo" data-img="assets/foto2.jpg"><img src="assets/foto2.jpg" alt=""></div>
+  <div class="photo" data-img="assets/foto3.jpg"><img src="assets/foto3.jpg" alt=""></div>
+  <div class="photo" data-img="assets/foto4.jpg"><img src="assets/foto4.jpg" alt=""></div>
+</div>
+
+    </section>
+
+    <!-- TIME -->
+    <section class="section" id="time">
+      <div class="section-head">
+        <h2>Waktu Kita ⏳</h2>
+        <p>Sejak hari itu… semuanya berubah jadi lebih indah.</p>
+      </div>
+
+      <div class="time-card">
+        <div class="time-left">
+          <h3>Sejak kita bersama 💗</h3>
+          <p class="hint">
+
+          </p>
+        </div>
+
+        <div class="time-right">
+          <div class="time-box">
+            <span id="days">0</span>
+            <small>Hari</small>
+          </div>
+          <div class="time-box">
+            <span id="hours">0</span>
+            <small>Jam</small>
+          </div>
+          <div class="time-box">
+            <span id="minutes">0</span>
+            <small>Menit</small>
+          </div>
+          <div class="time-box">
+            <span id="seconds">0</span>
+            <small>Detik</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Made with 💗 by Fatrian • <span id="today"></span></p>
+    </footer>
+  </main>
+
+  <!-- MODAL: IMAGE PREVIEW -->
+  <div class="modal" id="imgModal">
+    <div class="modal-content">
+      <button class="close" id="closeImg">✕</button>
+      <img id="modalImg" src="" alt="preview"/>
+    </div>
+  </div>
+
+  <!-- MODAL: LOVE LETTER -->
+  <div class="modal" id="letterModal">
+    <div class="modal-content letter">
+      <button class="close" id="closeLetter">✕</button>
+      <h2 class="script big">Surat untuk kamu 💌</h2>
+      <p id="letterText">
+        Aku nggak janji hidup bakal selalu mudah…
+        tapi aku janji, selama kamu mau, aku akan tetap tinggal.
+        Kamu rumah, kamu tenang, kamu bahagia versi aku.
+      </p>
+
+      <div class="letter-actions">
+        <button class="btn" id="copyLetter">📋 Salin Surat</button>
+        <button class="btn ghost" id="changeLetter">✨ Ganti Kata</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Tersalin! 💗</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
